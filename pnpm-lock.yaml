@@ -14,13 +14,13 @@ specifiers:
   eslint-plugin-import: ^2.26.0
   fast-glob: ^3.2.11
   humps: ^2.0.1
+  husky: ^7.0.4
   next: 12.1.0
   p5: ^1.4.1
   react: 17.0.2
   react-dom: 17.0.2
   react-p5-wrapper: ^3.2.1
   stylelint: ^14.6.1
-  stylelint-config-css-modules: ^4.1.0
   stylelint-config-standard: ^25.0.0
   stylelint-order: ^5.0.0
   typescript: 4.6.2
@@ -46,8 +46,8 @@ devDependencies:
   eslint-config-next: 12.1.0_3ac81353fe98918efb885c3e6be622c2
   eslint-config-prettier: 8.5.0_eslint@8.11.0
   eslint-plugin-import: 2.26.0_eslint@8.11.0
+  husky: 7.0.4
   stylelint: 14.6.1
-  stylelint-config-css-modules: 4.1.0_stylelint@14.6.1
   stylelint-config-standard: 25.0.0_stylelint@14.6.1
   stylelint-order: 5.0.0_stylelint@14.6.1
   typescript: 4.6.2
@@ -1284,6 +1284,12 @@ packages:
     resolution: {integrity: sha1-3QLqYIG9BWjcXQcxhEY5V7qe+ao=}
     dev: false
 
+  /husky/7.0.4:
+    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
+    engines: {node: '>=12'}
+    hasBin: true
+    dev: true
+
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
     engines: {node: '>= 4'}
@@ -1563,6 +1569,7 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
@@ -2326,16 +2333,6 @@ packages:
       react: 17.0.2
     dev: false
 
-  /stylelint-config-css-modules/4.1.0_stylelint@14.6.1:
-    resolution: {integrity: sha512-w6d552NscwvpUEaUcmq8GgWXKRv6lVHLbDj6QIHSM2vCWr83qRqRvXBJCfXDyaG/J3Zojw2inU9VvU99ZlXuUw==}
-    peerDependencies:
-      stylelint: ^14.5.1
-    dependencies:
-      stylelint: 14.6.1
-    optionalDependencies:
-      stylelint-scss: 4.2.0_stylelint@14.6.1
-    dev: true
-
   /stylelint-config-recommended/7.0.0_stylelint@14.6.1:
     resolution: {integrity: sha512-yGn84Bf/q41J4luis1AZ95gj0EQwRX8lWmGmBwkwBNSkpGSpl66XcPTulxGa/Z91aPoNGuIGBmFkcM1MejMo9Q==}
     peerDependencies:
@@ -2362,21 +2359,6 @@ packages:
       postcss-sorting: 7.0.1_postcss@8.4.12
       stylelint: 14.6.1
     dev: true
-
-  /stylelint-scss/4.2.0_stylelint@14.6.1:
-    resolution: {integrity: sha512-HHHMVKJJ5RM9pPIbgJ/XA67h9H0407G68Rm69H4fzFbFkyDMcTV1Byep3qdze5+fJ3c0U7mJrbj6S0Fg072uZA==}
-    requiresBuild: true
-    peerDependencies:
-      stylelint: ^14.5.1
-    dependencies:
-      lodash: 4.17.21
-      postcss-media-query-parser: 0.2.3
-      postcss-resolve-nested-selector: 0.1.1
-      postcss-selector-parser: 6.0.10
-      postcss-value-parser: 4.2.0
-      stylelint: 14.6.1
-    dev: true
-    optional: true
 
   /stylelint/14.6.1:
     resolution: {integrity: sha512-FfNdvZUZdzh9KDQxDnO7Opp+prKh8OQVuSW8S13cBtxrooCbm6J6royhUeb++53WPMt04VB+ZbOz/QmzAijs6Q==}
