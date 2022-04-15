@@ -1,0 +1,29 @@
+.root {
+  background-color: var(--color-dark);
+  border-radius: var(--size-sm);
+  box-shadow: var(--shadow-default);
+  color: var(--color-light);
+  display: grid;
+  grid-template-rows: auto min-content;
+  padding: var(--size-sm);
+  text-align: center;
+}
+
+.formula {
+  font-weight: bold;
+}
+
+.graph {
+  aspect-ratio: 1;
+  margin: 1em 0;
+  margin-left: calc(-1 * var(--size-sm));
+  overflow: hidden;
+  width: calc(100% + var(--size-sm) * 2);
+}
+
+.range {
+  display: flex;
+  font-size: 0.875em;
+  justify-content: space-between;
+  width: 100%;
+}

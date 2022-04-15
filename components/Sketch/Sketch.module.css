@@ -1,0 +1,19 @@
+.root {
+  aspect-ratio: 1;
+  background-color: var(--color-dark);
+  display: grid;
+  gap: 0;
+}
+
+.root canvas {
+  display: block;
+  height: auto !important;
+  width: 100% !important;
+}
+
+.loader {
+  align-self: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}

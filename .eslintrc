@@ -1,0 +1,17 @@
+{
+  "extends": ["next", "prettier"],
+  "plugins": ["import"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [["type", "builtin", "external"], ["internal"]]
+      }
+    ],
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }]
+  }
+}

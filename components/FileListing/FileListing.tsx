@@ -1,18 +1,19 @@
 import Link from 'next/link'
-import type { GetStaticProps } from 'next'
 import type { File } from 'types/files'
+import type { CoreComponent } from 'types/core'
 
 import { Grid } from 'components/Grid'
-import { listDirectory } from 'lib/directory'
 
-interface Props {
-  entryList: File[]
+import css from './FileListing.module.css'
+
+interface Props extends Omit<CoreComponent, 'children'> {
+  files: File[]
 }
 
-export default function SketchIndex({ entryList }: Props) {
+export default function FileListing({ files }: Props) {
   return (
-    <Grid size={1600}>
-      {entryList
+    <Grid size={1600} className={css.root}>
+      {files
         .filter(({ name }) => name !== 'index')
         .map(({ title, date, url }) => (
           <div key={title}>
@@ -31,14 +32,4 @@ export default function SketchIndex({ entryList }: Props) {
         ))}
     </Grid>
   )
-}
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const entryList = await listDirectory('pages/sketch/**/*.tsx')
-
-  return {
-    props: {
-      entryList,
-    },
-  }
 }
