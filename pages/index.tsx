@@ -10,7 +10,10 @@ interface Props {
 
 export default function SketchIndex({ entryList }: Props) {
   return (
-    <FileListing files={entryList} />
+    <>
+      <h1>Sketches</h1>
+      <FileListing files={entryList} />
+    </>
   )
 }
 

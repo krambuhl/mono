@@ -4,15 +4,23 @@ import type { Formula } from 'types/formulas'
 import { FormulaSketch } from 'components/FormulaSketch'
 import { Grid } from 'components/Grid'
 
+export const meta = {
+  title: 'Formulas',
+  date: '2022-04-03',
+}
+
 export default function FormulaList() {
   const formulaList = useMemo(() => getFormulas(), [])
 
   return (
-    <Grid size={280}>
-      {formulaList.map((config, i) => (
-        <FormulaSketch key={i} {...config} />
-      ))}
-    </Grid>
+    <>
+      <h1>Formulas</h1>
+      <Grid size={280}>
+        {formulaList.map((config, i) => (
+          <FormulaSketch key={i} {...config} />
+        ))}
+      </Grid>
+    </>
   )
 }
 
