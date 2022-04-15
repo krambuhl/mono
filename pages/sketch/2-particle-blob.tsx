@@ -7,7 +7,7 @@ const baseBg: Color = [20 / 255, 20 / 255, 20 / 255, 255]
 const size = 512
 
 export const meta = {
-  title: 'Paricle Blob',
+  title: 'Particle Blob',
   date: '2022-04-05',
 }
 

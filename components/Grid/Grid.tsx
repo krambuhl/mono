@@ -9,7 +9,7 @@ interface GridProps extends CoreComponent {
 }
 
 export function Grid({ size, children, className, ...props }: GridProps) {
-  const style = size ? { '--grid-column-size': `${size}px` } : {}
+  const style = (size ? { '--grid-column-size': `${size}px` } : {}) as React.CSSProperties
 
   return (
     <div className={classNames(css.root, className)} style={style} {...props}>

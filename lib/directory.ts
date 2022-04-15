@@ -50,6 +50,6 @@ export async function processFile(file: string): Promise<File> {
 
     return res
   } catch (err) {
-    throw new Error(err)
+    throw new Error('Error processing file')
   }
 }
