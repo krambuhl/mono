@@ -10,7 +10,7 @@ interface Props extends Omit<CoreComponent, 'children'> {
   files: File[]
 }
 
-export default function FileListing({ files }: Props) {
+export function FileListing({ files }: Props) {
   return (
     <Grid size={1600} className={css.root}>
       {files
