@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import type { Formula } from 'types/formulas'
+import Head from 'next/head'
 
 import { FormulaSketch } from 'components/FormulaSketch'
 import { Grid } from 'components/Grid'
@@ -14,6 +15,10 @@ export default function FormulaList() {
 
   return (
     <>
+      <Head>
+        <title>kram.codes — Formulas</title>
+      </Head>
+
       <h1>Formulas</h1>
       <Grid size={280}>
         {formulaList.map((config, i) => (

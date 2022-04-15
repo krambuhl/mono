@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Grid } from 'components/Grid'
 import { Sketch } from 'components/Sketch'
 
@@ -14,6 +16,10 @@ export const meta = {
 export default function ALittleSomething() {
   return (
     <>
+      <Head>
+        <title>kram.codes — Partical Blob</title>
+      </Head>
+
       <h1>Particle Blob</h1>
       <Grid size={280}>
         <div

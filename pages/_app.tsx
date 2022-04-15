@@ -20,7 +20,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
     <Providers>
       <AppLayout>
         <Head>
-          <title>Formulas</title>
+          <title>kram.codes</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
