@@ -43,7 +43,7 @@ export function FormulaSketch(config: Formula) {
             const y = pos * (size / 2)
 
             store.history.push([x, y])
-            if (store.history.length > 330) {
+            if (store.history.length > 420) {
               store.history.splice(0, 1)
             }
 
