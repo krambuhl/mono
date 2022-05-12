@@ -3,6 +3,7 @@ import type { File } from 'types/files'
 
 import { listDirectory } from 'lib/directory'
 import { FileListing } from 'components/FileListing'
+import { HtmlHead } from 'components/HtmlHead'
 
 interface Props {
   entryList: File[]
@@ -11,6 +12,7 @@ interface Props {
 export default function SketchIndex({ entryList }: Props) {
   return (
     <>
+      <HtmlHead title="Sketches" />
       <h1>Sketches</h1>
       <FileListing files={entryList} />
     </>

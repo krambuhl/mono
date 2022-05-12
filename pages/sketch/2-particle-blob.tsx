@@ -2,10 +2,10 @@ import Head from 'next/head'
 
 import { Grid } from 'components/Grid'
 import { Sketch } from 'components/Sketch'
+import { HtmlHead } from 'components/HtmlHead'
+import { P5Color } from 'types/p5'
 
-type Color = [number, number, number, number]
-
-const baseBg: Color = [20 / 255, 20 / 255, 20 / 255, 255]
+const baseBg: P5Color = [20 / 255, 20 / 255, 20 / 255, 255]
 const size = 512
 
 export const meta = {
@@ -16,11 +16,9 @@ export const meta = {
 export default function ALittleSomething() {
   return (
     <>
-      <Head>
-        <title>kram.codes — Partical Blob</title>
-      </Head>
+      <HtmlHead title={meta.title} />
+      <h1>{meta.title}</h1>
 
-      <h1>Particle Blob</h1>
       <Grid size={280}>
         <div
           style={{

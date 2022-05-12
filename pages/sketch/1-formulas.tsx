@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import type { Formula } from 'types/formulas'
-import Head from 'next/head'
 
 import { FormulaSketch } from 'components/FormulaSketch'
 import { Grid } from 'components/Grid'
+import { HtmlHead } from 'components/HtmlHead'
 
 export const meta = {
   title: 'Formulas',
@@ -15,11 +15,9 @@ export default function FormulaList() {
 
   return (
     <>
-      <Head>
-        <title>kram.codes — Formulas</title>
-      </Head>
+      <HtmlHead title={meta.title} />
 
-      <h1>Formulas</h1>
+      <h1>{meta.title}</h1>
       <Grid size={280}>
         {formulaList.map((config, i) => (
           <FormulaSketch key={i} {...config} />

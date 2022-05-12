@@ -2,10 +2,10 @@ import Head from 'next/head'
 
 import { Grid } from 'components/Grid'
 import { Sketch } from 'components/Sketch'
+import { HtmlHead } from 'components/HtmlHead'
+import { P5Color } from 'types/p5'
 
-type Color = [number, number, number, number]
-
-const baseBg: Color = [20 / 255, 20 / 255, 20 / 255, 255]
+const baseBg: P5Color = [20 / 255, 20 / 255, 20 / 255, 255]
 const size = 512
 
 export const meta = {
@@ -16,11 +16,9 @@ export const meta = {
 export default function Output() {
   return (
     <>
-      <Head>
-        <title>kram.codes — {meta.title}</title>
-      </Head>
-
+      <HtmlHead title={meta.title} />
       <h1>{meta.title}</h1>
+
       <Grid size={280}>
         <div
           style={{
@@ -49,7 +47,9 @@ export default function Output() {
               for (let i = 0; i < length; i++) {
                 const pos = i / length
                 const offset = store.history[i]
-                const input = (start - offset) / p.lerp(44.9, 45.1, p.norm(Math.sin(start / 1000), -1, 1))
+                const input =
+                  (start - offset) /
+                  p.lerp(44.9, 45.1, p.norm(Math.sin(start / 1000), -1, 1))
 
                 if (input > -20 || i % 4 > 3) {
                   p.fill(
@@ -70,18 +70,15 @@ export default function Output() {
                 }
 
                 const y =
-                  Math.cos(input) * (size / 8) *
-                    p.lerp(1, 3, Math.cos(input * 9))
+                  Math.cos(input) *
+                  (size / 8) *
+                  p.lerp(1, 3, Math.cos(input * 9))
 
-                const x = 
-                  Math.sin(input) * (size / 2) *
-                    p.lerp(0, -1, Math.sin(pos))
-                      // p.lerp(0, size / 4, Math.sin(offset * pos))
+                const x =
+                  Math.sin(input) * (size / 2) * p.lerp(0, -1, Math.sin(pos))
+                // p.lerp(0, size / 4, Math.sin(offset * pos))
 
-                p.circle(
-                  x, y,
-                  p.lerp(4, 32, Math.sin(pos) * Math.cos(pos))
-                )
+                p.circle(x, y, p.lerp(4, 32, Math.sin(pos) * Math.cos(pos)))
               }
             }}
           />
