@@ -1,9 +1,11 @@
 import Head from 'next/head'
+import type { P5Color } from 'types/p5'
 
 import { Grid } from 'components/Grid'
 import { Sketch } from 'components/Sketch'
 import { HtmlHead } from 'components/HtmlHead'
-import { P5Color } from 'types/p5'
+import { Text } from 'components/Text'
+import { Stack } from 'components/Stack'
 
 const baseBg: P5Color = [20 / 255, 20 / 255, 20 / 255, 255]
 const size = 512
@@ -15,9 +17,12 @@ export const meta = {
 
 export default function ALittleSomething() {
   return (
-    <>
+    <Stack>
       <HtmlHead title={meta.title} />
-      <h1>{meta.title}</h1>
+
+      <Text as="h1" type="heading" size="lg">
+        {meta.title}
+      </Text>
 
       <Grid size={280}>
         <div
@@ -93,6 +98,6 @@ export default function ALittleSomething() {
           />
         </div>
       </Grid>
-    </>
+    </Stack>
   )
 }

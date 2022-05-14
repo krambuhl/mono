@@ -1,6 +1,6 @@
 .root {
   aspect-ratio: 1;
-  background-color: var(--color-dark);
+  background-color: var(--bg-inverted-default);
   display: grid;
   gap: 0;
 }

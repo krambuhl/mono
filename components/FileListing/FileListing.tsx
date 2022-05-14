@@ -1,33 +1,27 @@
-import Link from 'next/link'
-import type { File } from 'types/files'
-import type { CoreComponent } from 'types/core'
-
 import { Grid } from 'components/Grid'
+import { Text } from 'components/Text'
+import { Link } from 'components/Link'
+import { Stack } from 'components/Stack'
 
+import { FileListingProps } from './types'
 import css from './FileListing.module.css'
 
-interface Props extends Omit<CoreComponent, 'children'> {
-  files: File[]
-}
-
-export function FileListing({ files }: Props) {
+export function FileListing({ files }: FileListingProps) {
   return (
     <Grid size={1600} className={css.root}>
       {files
         .filter(({ name }) => name !== 'index')
         .map(({ title, date, url }) => (
           <div key={title}>
-            <Link href={url}>
-              <a>
-                <div>
-                  <strong>{title}</strong>
-                </div>
+            <Stack gap="xs">
+              <Text as="h3" type="heading" size="sm" className={css.title}>
+                <Link href={url}>{title}</Link>
+              </Text>
 
-                <div style={{ marginTop: 4 }}>
-                  {new Date(date).toLocaleDateString('en-US')}
-                </div>
-              </a>
-            </Link>
+              <Text as="div" size="sm">
+                {new Date(date).toLocaleDateString('en-US')}
+              </Text>
+            </Stack>
           </div>
         ))}
     </Grid>

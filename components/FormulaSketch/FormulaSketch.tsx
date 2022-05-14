@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import type { Formula } from 'types/formulas'
+import type { FormulaSketchProps } from './types'
 
 import { Sketch } from 'components/Sketch'
 
@@ -9,18 +9,21 @@ import css from './FormulaSketch.module.css'
 const round = (x: number) => Math.ceil(x * 1000) / 1000
 const interpolate = (a: number, b: number, t: number) => t / (b - a)
 
-export function FormulaSketch(config: Formula) {
-  const fn = config.formulaFn
-
-  const limits = useLimits(fn, { start: 0, end: Math.PI * 2 })
-  const min = useMemo(() => round(limits.min), [limits.min])
-  const max = useMemo(() => round(limits.max ?? Infinity), [limits.max])
+export function FormulaSketch({
+  formulaName,
+  formula,
+  min,
+  max,
+}: FormulaSketchProps) {
+  const limits = useLimits(formula, { start: 0, end: Math.PI * 2 })
+  const limitMin = useMemo(() => round(limits.min ?? -Infinity), [limits.min])
+  const limitMax = useMemo(() => round(limits.max ?? Infinity), [limits.max])
   const size = 512
 
   return (
     <div className={css.root}>
       <div className={css.formula}>
-        <code>{config.formula}</code>
+        <code>{formulaName}</code>
       </div>
       <div className={css.graph}>
         <Sketch
@@ -31,10 +34,10 @@ export function FormulaSketch(config: Formula) {
           }}
           draw={(p, store) => {
             const repeatInput = (p.millis() / 1400) % (Math.PI * 2)
-            const out = fn(repeatInput)
+            const out = formula(repeatInput)
             const pos = interpolate(
-              Math.max(min, config.min ?? -Infinity),
-              Math.min(max, config.max ?? Infinity),
+              Math.max(limitMin, min ?? -Infinity),
+              Math.min(limitMax, max ?? Infinity),
               out
             )
 
@@ -43,7 +46,7 @@ export function FormulaSketch(config: Formula) {
             const y = pos * (size / 2)
 
             store.history.push([x, y])
-            if (store.history.length > 435) {
+            if (store.history.length > 340) {
               store.history.splice(0, 1)
             }
 
@@ -83,11 +86,15 @@ export function FormulaSketch(config: Formula) {
       <div className={css.range}>
         <span>
           min:{' '}
-          <strong>{Math.abs(min) > 100000 ? min.toExponential(2) : min}</strong>
+          <strong>
+            {Math.abs(limitMin) > 100000 ? limitMin.toExponential(2) : limitMin}
+          </strong>
         </span>
         <span>
           max:{' '}
-          <strong>{Math.abs(max) > 100000 ? max.toExponential(2) : max}</strong>
+          <strong>
+            {Math.abs(limitMax) > 100000 ? limitMax.toExponential(2) : limitMax}
+          </strong>
         </span>
       </div>
     </div>

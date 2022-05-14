@@ -1,3 +1,8 @@
-.root {
-  /* empty */
+.file {
+  align-items: baseline;
+  display: flex;
+}
+
+.title {
+  flex-grow: 1;
 }

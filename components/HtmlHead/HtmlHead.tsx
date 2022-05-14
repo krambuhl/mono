@@ -1,14 +1,9 @@
-import type { CoreComponent } from 'types/core'
 import Head from 'next/head'
+import type { HtmlHeadProps } from './types'
 
 import { useConstants } from 'contexts/Constants'
 
-interface Props {
-  title: string
-  siteName?: string
-}
-
-export function HtmlHead({ title, siteName }: Props) {
+export function HtmlHead({ title, siteName }: HtmlHeadProps) {
   const { site } = useConstants()
 
   const siteTitle = siteName ?? site.name

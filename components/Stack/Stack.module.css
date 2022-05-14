@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  flex-direction: var(--grid-direction, column);
+  gap: var(--grid-gap, var(--size-md));
+}
+
+.directionVertical { --grid-direction: column; }
+.directionHorizontal { --grid-direction: row; }
+
+.gapNone { --grid-gap: 0; }
+.gapXs { --grid-gap: var(--size-xs); }
+.gapSm { --grid-gap: var(--size-sm); }
+.gapMd { --grid-gap: var(--size-md); }
+.gapLg { --grid-gap: var(--size-lg); }

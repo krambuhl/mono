@@ -1,8 +1,8 @@
 .root {
-  background-color: var(--color-dark);
+  background-color: var(--bg-inverted-default);
   border-radius: var(--size-sm);
-  box-shadow: var(--shadow-default);
-  color: var(--color-light);
+  box-shadow: var(--shadow-mid);
+  color: var(--content-inverted-default);
   display: grid;
   grid-template-rows: auto min-content;
   padding: var(--size-sm);

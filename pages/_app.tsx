@@ -6,6 +6,7 @@ import { ConstantsContext } from 'contexts/Constants'
 
 import * as constants from '../constants'
 
+import 'the-new-css-reset/css/reset.css'
 import 'styles/globals.css'
 import 'styles/tokens.css'
 

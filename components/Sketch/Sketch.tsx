@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { useCallback } from 'react'
 import dynamic from 'next/dynamic'
-import type { CoreComponent } from 'types/core'
-import type { P5Instance } from 'react-p5-wrapper'
+import type { SketchProps } from './types'
+import type { P5Instance, Sketch as SketchType } from 'react-p5-wrapper'
 
 import css from './Sketch.module.css'
 
@@ -17,23 +17,18 @@ const SketchWrapper = dynamic(
   }
 )
 
-interface SketchProps extends Omit<CoreComponent, 'children'> {
-  setup: (p: P5Instance, store: any) => void
-  draw: (p: P5Instance, store: any) => void
-}
-
 export function Sketch({ setup, draw, className, ...props }: SketchProps) {
-  const sketch = useCallback(
-    (p: P5Instance) => {
+  const sketch: SketchType = useCallback(
+    (p) => {
       let store = {}
 
       p.setup = () => {
         p.frameRate(60)
-        setup && setup(p, store)
+        setup && setup(p as P5Instance, store)
       }
 
       p.draw = () => {
-        draw && draw(p, store)
+        draw && draw(p as P5Instance, store)
       }
     },
     [setup, draw]

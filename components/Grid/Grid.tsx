@@ -1,18 +1,22 @@
 import classNames from 'classnames'
-
-import { CoreComponent } from 'types/core'
+import type { GridProps } from './types'
 
 import css from './Grid.module.css'
 
-interface GridProps extends CoreComponent {
-  size?: number
-}
-
-export function Grid({ size, children, className, ...props }: GridProps) {
-  const style = (size ? { '--grid-column-size': `${size}px` } : {}) as React.CSSProperties
+export function Grid({ size, gap, children, className, ...props }: GridProps) {
+  const gapStyle = gap
+    ? ({ '--grid-gap': `${gap}px` } as React.CSSProperties)
+    : {}
+  const sizeStyle = size
+    ? ({ '--grid-column-size': `${size}px` } as React.CSSProperties)
+    : {}
 
   return (
-    <div className={classNames(css.root, className)} style={style} {...props}>
+    <div
+      className={classNames(css.root, className)}
+      style={{ ...gapStyle, ...sizeStyle }}
+      {...props}
+    >
       {children}
     </div>
   )

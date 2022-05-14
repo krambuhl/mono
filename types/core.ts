@@ -1,4 +1,4 @@
-export type CoreComponent = {
+export interface CoreComponent extends React.HTMLAttributes<HTMLElement> {
   className?: string
-  children: React.ReactNode
+  children: React.ReactNode | string
 }

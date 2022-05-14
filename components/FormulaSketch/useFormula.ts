@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import type { FormulaFn } from 'types/formulas'
+import type { Formula } from './types'
 
 const min = (list: number[]) => {
   return list.reduce((cur, num) => (num < cur ? num : cur), Infinity)
@@ -13,7 +13,7 @@ const pair = (inputs: number[], outputs: number[]) => {
   return inputs.map((input, index) => [input, outputs[index]])
 }
 
-export function useFormula(inputs: [number], fn: FormulaFn) {
+export function useFormula(inputs: [number], fn: Formula) {
   const outputs = useMemo(() => inputs.map(fn), [inputs, fn])
   const pairs = useMemo(() => pair(inputs, outputs), [inputs, outputs])
 
