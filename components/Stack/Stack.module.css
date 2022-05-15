@@ -8,7 +8,9 @@
 .directionHorizontal { --grid-direction: row; }
 
 .gapNone { --grid-gap: 0; }
+.gapXxs { --grid-gap: var(--size-xxs); }
 .gapXs { --grid-gap: var(--size-xs); }
 .gapSm { --grid-gap: var(--size-sm); }
 .gapMd { --grid-gap: var(--size-md); }
 .gapLg { --grid-gap: var(--size-lg); }
+.gapXl { --grid-gap: var(--size-xl); }

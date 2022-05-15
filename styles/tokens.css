@@ -1,25 +1,35 @@
 :root {
-  --size-xs: clamp(0.2rem, 0.7vw, 0.5rem);
-  --size-sm: clamp(0.6rem, 1.4vw, 1rem);
-  --size-md: clamp(0.8rem, 2vw, 1.8rem);
-  --size-lg: clamp(1rem, 2.8vw, 2.6rem);
-  --size-xl: clamp(1.4rem, 4.8vw, 4rem);
-  --shadow-low: 0 0.1em var(--size-xs) hsl(0deg 0 0 / 10%);
-  --shadow-mid: 0 0.2em var(--size-sm) hsl(0deg 0 0 / 15%);
-  --shadow-high: 0 0.3em var(--size-md) hsl(0deg 0 0 / 20%);
+  --root-size: 100%; /* 16px; */
+  --size-0: 0;
+  --size-2: 2px;
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-12: 12px;
+  --size-16: 16px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-xxs: clamp(var(--size-2), 0.5vw, var(--size-4));
+  --size-xs: clamp(var(--size-4), 0.7vw, var(--size-8));
+  --size-sm: clamp(var(--size-8), 1.4vw, var(--size-12));
+  --size-md: clamp(var(--size-12), 2vw, var(--size-16));
+  --size-lg: clamp(var(--size-16), 2.8vw, var(--size-24));
+  --size-xl: clamp(var(--size-24), 4.8vw, var(--size-32));
+  --shadow-low: 0 0 var(--size-xs) hsl(0deg 0 0 / 10%);
+  --shadow-mid: 0 var(--size-4) var(--size-8) hsl(0deg 0 0 / 15%);
+  --shadow-high: 0 var(--size-8) var(--size-12) hsl(0deg 0 0 / 20%);
   --font-family-body:
     -apple-system,
     blinkmacsystemfont,
-    avenir next,
-    avenir,
-    segoe ui,
-    helvetica neue,
-    helvetica,
-    ubuntu,
+    "Segoe UI",
     roboto,
-    noto,
+    helvetica,
     arial,
-    sans-serif;
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   --font-family-data:
     menlo,
     consolas,
@@ -27,6 +37,8 @@
     liberation mono,
     lucida console,
     monospace;
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
   --bg-base-default: hsl(0deg 2% 100%);
   --bg-base-hover: hsl(0deg 2% 93%);
   --bg-base-pressed: hsl(0deg 2% 88%);
@@ -45,12 +57,12 @@
   --content-inverted-default: hsl(0deg 0% 97%);
   --content-inverted-hover: hsl(0deg 0% 93%);
   --content-inverted-pressed: hsl(0deg 0% 89%);
-  --primary-action-default: hsl(200deg 85% 30%);
-  --primary-action-hover: hsl(200deg 90% 25%);
-  --primary-action-pressed: hsl(200deg 95% 20%);
-  --primary-muted-default: hsl(200deg 30% 80%);
-  --primary-muted-hover: hsl(200deg 30% 65%);
-  --primary-muted-pressed: hsl(200deg 30% 50%);
+  --primary-action-default: hsl(280deg 85% 40%);
+  --primary-action-hover: hsl(280deg 90% 32%);
+  --primary-action-pressed: hsl(280deg 95% 24%);
+  --primary-muted-default: hsl(280deg 30% 80%);
+  --primary-muted-hover: hsl(280deg 30% 65%);
+  --primary-muted-pressed: hsl(280deg 30% 50%);
   --success-action-default: hsl(150deg 84% 18%);
   --success-action-hover: hsl(150deg 90% 13%);
   --success-action-pressed: hsl(150deg 95% 8%);

@@ -13,12 +13,12 @@ export function FileListing({ files }: FileListingProps) {
         .filter(({ name }) => name !== 'index')
         .map(({ title, date, url }) => (
           <div key={title}>
-            <Stack gap="xs">
+            <Stack gap="xxs">
               <Text as="h3" type="heading" size="sm" className={css.title}>
                 <Link href={url}>{title}</Link>
               </Text>
 
-              <Text as="div" size="sm">
+              <Text as="div" size="xs">
                 {new Date(date).toLocaleDateString('en-US')}
               </Text>
             </Stack>

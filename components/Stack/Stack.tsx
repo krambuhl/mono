@@ -10,10 +10,12 @@ const directions = {
 
 const gaps = {
   none: css.gapNone,
+  xxs: css.gapXxs,
   xs: css.gapXs,
   sm: css.gapSm,
   md: css.gapMd,
   lg: css.gapLg,
+  xl: css.gapXl,
 } as Record<StackGap, string>
 
 export function Stack({

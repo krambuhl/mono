@@ -6,6 +6,7 @@
   }
 
   &:active {
+    color: var(--primary-action-default);
     text-decoration-color: var(--primary-action-default);
   }
 }

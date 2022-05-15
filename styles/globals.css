@@ -14,12 +14,8 @@ a {
   text-decoration: none;
 }
 
-:focus {
-  outline: 3px solid var(--primary-action-default);
-  outline-offset: 3px;
-}
-
+:focus,
 :focus-visible {
-  outline: 3px solid var(--primary-action-default);
-  outline-offset: 3px;
+  outline: 2px solid var(--primary-action-default);
+  outline-offset: 4px;
 }
