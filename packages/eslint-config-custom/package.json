@@ -10,7 +10,8 @@
     "eslint-plugin-import": "^2.26.0"
   },
   "peerDependencies": {
-    "eslint": ">=8 <9"
+    "eslint": ">=8 <9",
+    "next": "^12.1"
   },
   "publishConfig": {
     "access": "public"
