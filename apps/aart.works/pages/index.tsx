@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next'
-import type { File } from 'types/files'
 import { listDirectory } from 'lib/directory'
+import type { File } from 'ui/types/files'
 import { FileListing } from 'ui/components/FileListing'
 import { Text } from 'ui/components/Text'
 import { Stack } from 'ui/components/Stack'
