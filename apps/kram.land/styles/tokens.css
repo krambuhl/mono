@@ -52,19 +52,19 @@
   --content-inverted-hover: hsl(0deg 0% 93%);
   --content-inverted-pressed: hsl(0deg 0% 89%);
 
-  --primary-action-default: hsl(280deg 85% 40%);
-  --primary-action-hover: hsl(280deg 90% 32%);
-  --primary-action-pressed: hsl(280deg 95% 24%);
-  --primary-muted-default: hsl(280deg 30% 80%);
-  --primary-muted-hover: hsl(280deg 30% 65%);
-  --primary-muted-pressed: hsl(280deg 30% 50%);
+  --primary-action-default: hsl(170deg 85% 40%);
+  --primary-action-hover: hsl(170deg 90% 32%);
+  --primary-action-pressed: hsl(170deg 95% 24%);
+  --primary-muted-default: hsl(170deg 30% 80%);
+  --primary-muted-hover: hsl(170deg 30% 65%);
+  --primary-muted-pressed: hsl(170deg 30% 50%);
 
-  --success-action-default: hsl(150deg 84% 18%);
-  --success-action-hover: hsl(150deg 90% 13%);
-  --success-action-pressed: hsl(150deg 95% 8%);
-  --success-muted-default: hsl(150deg 30% 80%);
-  --success-muted-hover: hsl(150deg 30% 65%);
-  --success-muted-pressed: hsl(150deg 30% 50%);
+  --success-action-default: hsl(110deg 84% 18%);
+  --success-action-hover: hsl(110deg 90% 13%);
+  --success-action-pressed: hsl(110deg 95% 8%);
+  --success-muted-default: hsl(110deg 30% 80%);
+  --success-muted-hover: hsl(110deg 30% 65%);
+  --success-muted-pressed: hsl(110deg 30% 50%);
 
   --warning-action-default: hsl(40deg 85% 25%);
   --warning-action-hover: hsl(40deg 90% 20%);
