@@ -1,4 +1,4 @@
-import type { File } from 'types/files'
+import type { File } from '../types/files'
 import fs from 'fs/promises'
 import path from 'path'
 import json from 'dirty-json'
