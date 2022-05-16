@@ -1,4 +1,4 @@
-import type { CoreComponent } from 'types/core'
+import type { CoreComponent } from 'ui/types/core'
 import type { P5Instance } from 'react-p5-wrapper'
 
 export interface SketchProps extends Omit<CoreComponent, 'children'> {
