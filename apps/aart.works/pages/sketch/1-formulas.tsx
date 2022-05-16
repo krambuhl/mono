@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { FormulaSketchProps } from 'components/FormulaSketch/types'
 import { FormulaSketch } from 'components/FormulaSketch'
-import { HtmlHead } from 'components/HtmlHead'
+import { HtmlHead } from 'ui/components/HtmlHead'
 import { Grid } from 'ui/components/Grid'
 import { Text } from 'ui/components/Text'
 import { Stack } from 'ui/components/Stack'

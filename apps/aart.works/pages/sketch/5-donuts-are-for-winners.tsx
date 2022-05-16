@@ -1,6 +1,6 @@
 import type { P5Color } from 'types/p5'
 import { Sketch } from 'components/Sketch'
-import { HtmlHead } from 'components/HtmlHead'
+import { HtmlHead } from 'ui/components/HtmlHead'
 import { Grid } from 'ui/components/Grid'
 import { Text } from 'ui/components/Text'
 import { Stack } from 'ui/components/Stack'

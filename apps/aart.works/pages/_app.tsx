@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
-import { AppLayout } from 'components/AppLayout'
-import { ConstantsContext } from 'contexts/Constants'
+import { AppLayout } from 'ui/components/AppLayout'
+import { DataContext } from 'ui/components/DataContext'
 
 import constants, { SITE_NAME } from '../constants'
 
@@ -11,8 +11,8 @@ import 'styles/tokens.css'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <ConstantsContext.Provider value={constants}>
-      <AppLayout siteName={SITE_NAME}>
+    <DataContext.Provider value={{ constants }}>
+      <AppLayout>
         <Head>
           <title>{SITE_NAME}</title>
           <link rel="icon" href="/favicon.ico" />
@@ -20,7 +20,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
 
         <Component {...pageProps} />
       </AppLayout>
-    </ConstantsContext.Provider>
+    </DataContext.Provider>
   )
 }
 
