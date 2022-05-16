@@ -12,6 +12,7 @@ export function FileListing({ files }: FileListingProps) {
       {files &&
         files
           .filter(({ name }) => name !== 'index')
+          .sort((a, b) => (a.date < b.date ? 1 : -1))
           .map(({ title, date, url }) => (
             <div key={title}>
               <Stack gap="xxs">
