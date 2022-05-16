@@ -1,4 +1,4 @@
-import { CoreComponent } from 'types/core'
+import { CoreComponent } from '../../types/core'
 
 export type StackDirection = 'vertical' | 'horizontal'
 export type StackGap = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'

@@ -1,4 +1,4 @@
-import { CoreComponent } from 'types/core'
+import { CoreComponent } from '../../types/core'
 
 export interface GridProps extends CoreComponent {
   size?: number

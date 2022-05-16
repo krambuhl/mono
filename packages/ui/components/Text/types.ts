@@ -1,5 +1,4 @@
-import React from 'react'
-import type { CoreComponent } from 'ui/types/core'
+import type { CoreComponent } from '../../types/core'
 
 export type TextType = 'heading' | 'body' | 'data'
 export type TextSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
