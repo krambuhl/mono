@@ -1,0 +1,16 @@
+{
+  "name": "postcss-config-custom",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "postcss": "^8.4.13"
+  },
+  "dependencies": {
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
