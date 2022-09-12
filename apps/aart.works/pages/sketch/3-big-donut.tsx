@@ -1,11 +1,12 @@
 import type { P5Color } from 'types/p5'
 import { Sketch } from 'components/Sketch'
-import { HtmlHead } from 'ui/components/HtmlHead'
-import { Grid } from 'ui/components/Grid'
-import { Text } from 'ui/components/Text'
+import { PageHeader } from 'ui/components/PageHeader'
 import { Stack } from 'ui/components/Stack'
+import { HtmlTitle } from 'ui/components/HtmlTitle'
+import { Area } from 'ui/components/Area'
+import { tokens } from 'ui/tokens'
 
-const baseBg: P5Color = [20 / 255, 20 / 255, 20 / 255, 255]
+const baseBg: P5Color = [0 / 255, 0 / 255, 0 / 255, 255]
 const size = 512
 
 export const meta = {
@@ -15,21 +16,12 @@ export const meta = {
 
 export default function Output() {
   return (
-    <Stack>
-      <HtmlHead title={meta.title} />
+    <>
+      <HtmlTitle title={meta.title} />
 
-      <Text as="h1" type="heading" size="lg">
-        {meta.title}
-      </Text>
-
-      <Grid size={280}>
-        <div
-          style={{
-            maxWidth: 720,
-            borderRadius: `var(--size-sm)`,
-            overflow: 'hidden',
-          }}
-        >
+      <Stack>
+        <PageHeader title={meta.title} date={meta.date} />
+        <Area width={tokens.width.x768}>
           <Sketch
             setup={(p, store) => {
               p.createCanvas(size, size, p.WEBGL)
@@ -90,8 +82,8 @@ export default function Output() {
               }
             }}
           />
-        </div>
-      </Grid>
-    </Stack>
+        </Area>
+      </Stack>
+    </>
   )
 }

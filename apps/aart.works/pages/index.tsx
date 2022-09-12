@@ -1,9 +1,12 @@
 import type { GetStaticProps } from 'next'
+
 import { listDirectory } from 'ui/lib/directory'
 import type { File } from 'ui/types/files'
 import { FileListing } from 'ui/components/FileListing'
-import { Text } from 'ui/components/Text'
+import { PageHeader } from 'ui/components/PageHeader'
 import { Stack } from 'ui/components/Stack'
+import { tokens } from 'ui/tokens'
+import { Space } from 'ui/components/Space'
 
 interface Props {
   entryList: File[]
@@ -12,11 +15,10 @@ interface Props {
 export default function SketchIndex({ entryList }: Props) {
   return (
     <Stack>
-      <Text as="h1" type="heading" size="lg">
-        Sketches
-      </Text>
-
-      <FileListing files={entryList} />
+      <PageHeader title="Sketches" />
+      <Space pv={tokens.size.x24}>
+        <FileListing files={entryList} />
+      </Space>
     </Stack>
   )
 }

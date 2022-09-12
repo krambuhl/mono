@@ -1,5 +1,5 @@
-export const SITE_NAME = 'aart.works'
-
-export default {
-  SITE_NAME,
-}
+export const constants = {
+  SITE_NAME: 'aart.works',
+  SITE_DESCRIPTION: 'Et excepteur laboris duis aliquip.',
+  SITE_YEAR: 2022,
+} as const

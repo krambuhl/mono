@@ -1,11 +1,8 @@
 {
   "extends": "tsconfig/nextjs.json",
-  "include": ["additional.d.td", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["additional.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "plugins": [{
-      "name": "typescript-plugin-css-modules"
-    }]
+    "baseUrl": "."
   }
 }

@@ -1,10 +1,12 @@
 import { useMemo } from 'react'
 import type { FormulaSketchProps } from 'components/FormulaSketch/types'
 import { FormulaSketch } from 'components/FormulaSketch'
-import { HtmlHead } from 'ui/components/HtmlHead'
-import { Grid } from 'ui/components/Grid'
-import { Text } from 'ui/components/Text'
+import { Area } from 'ui/components/Area'
+import { PageHeader } from 'ui/components/PageHeader'
 import { Stack } from 'ui/components/Stack'
+import { HtmlTitle } from 'ui/components/HtmlTitle'
+import { tokens } from 'ui/tokens'
+import { AutoGrid } from 'ui/components/Grid'
 
 export const meta = {
   title: 'Formulas',
@@ -15,19 +17,20 @@ export default function FormulaList() {
   const formulaList = useMemo(() => getFormulas(), [])
 
   return (
-    <Stack>
-      <HtmlHead title={meta.title} />
+    <>
+      <HtmlTitle title={meta.title} />
 
-      <Text as="h1" type="heading" size="lg">
-        {meta.title}
-      </Text>
-
-      <Grid size={280}>
-        {formulaList.map((config, i) => (
-          <FormulaSketch key={i} {...config} />
-        ))}
-      </Grid>
-    </Stack>
+      <Stack>
+        <PageHeader title={meta.title} date={meta.date} />
+        <Area width={tokens.width.x768}>
+          <AutoGrid gap={tokens.size.x16} width={tokens.width.x256}>
+            {formulaList.map((config, i) => (
+              <FormulaSketch key={i} {...config} />
+            ))}
+          </AutoGrid>
+        </Area>
+      </Stack>
+    </>
   )
 }
 

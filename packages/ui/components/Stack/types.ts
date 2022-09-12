@@ -1,9 +1,10 @@
+import { SizeToken } from '../../tokens'
 import { CoreComponent } from '../../types/core'
 
 export type StackDirection = 'vertical' | 'horizontal'
-export type StackGap = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export interface StackProps extends CoreComponent {
+  as?: 'div' | 'section' | 'header' | 'footer'
   direction?: StackDirection
-  gap?: StackGap
+  gap?: SizeToken
 }

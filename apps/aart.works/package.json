@@ -12,26 +12,25 @@
     "classnames": "^2.3.1",
     "csvtojson": "^2.0.10",
     "humps": "^2.0.1",
-    "next": "12.1.0",
-    "p5": "^1.4.1",
+    "next": "12.3.0",
+    "p5": "^1.4.2",
     "postcss": ">=8.4.6 <9.0.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-p5-wrapper": "^3.3.0",
-    "the-new-css-reset": "^1.6.0",
+    "the-new-css-reset": "^1.7.3",
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@types/humps": "^2.0.1",
+    "@types/humps": "^2.0.2",
     "@types/node": "17.0.21",
-    "@types/p5": "^1.4.1",
+    "@types/p5": "^1.4.2",
     "@types/react": "17.0.40",
-    "eslint-config-custom": "workspace:*",
     "eslint": "8.11.0",
+    "eslint-config-custom": "workspace:*",
     "next-transpile-modules": "9.0.0",
     "postcss-config-custom": "workspace:*",
     "stylelint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*",
-    "typescript": "^4.5.3"
+    "tsconfig": "workspace:*"
   }
 }

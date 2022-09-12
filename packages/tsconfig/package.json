@@ -2,10 +2,8 @@
   "name": "tsconfig",
   "version": "0.0.0",
   "private": true,
-  "peerDependencies": {
-    "typescript": ">=4"
-  },
   "dependencies": {
+    "typescript": "^4.8.3",
     "typescript-plugin-css-modules": "^3.4.0"
   },
   "files": [
