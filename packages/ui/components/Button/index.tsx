@@ -5,6 +5,7 @@ import type { ButtonProps } from './types'
 export function Button({ href, children, className, ...props }: ButtonProps) {
   const Tag = href ? 'a' : 'button'
   const addlProps = href ? { href } : {}
+
   return (
     <Tag className={classNames('button', className)} {...addlProps} {...props}>
       {children}
