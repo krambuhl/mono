@@ -70,7 +70,7 @@ export default function Index() {
 
               <div>
                 <Space height={tokens.size.x4} data-hello="Weod" />
-                <Button href="#">say hello back</Button>
+                <Button href="mailto:hello@kram.land">say hello</Button>
               </div>
 
               <BodyText as="p" size="xs">
