@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 export const ImageLockup = styled.div<ImageLockupProps>`
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(2, 1fr);
   ${responsiveToken<SizeToken>('gap', {
     xs: tokens.size.x12,

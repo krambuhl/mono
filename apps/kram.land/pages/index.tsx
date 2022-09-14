@@ -14,6 +14,7 @@ const imageProps = {
   style: {
     width: '100%',
     height: 'auto',
+    aspectRatio: 1,
   },
 }
 
