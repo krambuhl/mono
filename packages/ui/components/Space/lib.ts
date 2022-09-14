@@ -1,5 +1,11 @@
 import type { Directions } from './types'
-import { SizeToken } from '../../tokens'
+import { SizeToken, tokens } from '../../tokens'
+import {
+  breakpoints,
+  Breakpoint,
+  convertToResponsive,
+  Responsive,
+} from '../../lib/responsive'
 
 export function generateSpace({
   a,
@@ -9,11 +15,19 @@ export function generateSpace({
   r,
   b,
   l,
-}: { [Prop in Directions]?: SizeToken }) {
-  if (a) return a
-  if (h && v) return `${v} ${h}`
-  if (v) return `${v} 0`
-  if (h) return `0 ${h}`
-  if (t || r || b || l) return `${t} ${r} ${b} ${l}`
-  return ``
+}: { [Prop in Directions]?: SizeToken | Responsive<SizeToken> }) {
+  const ra = convertToResponsive(a)
+  const rt = convertToResponsive(t)
+  const rr = convertToResponsive(r)
+  const rl = convertToResponsive(l)
+  const rb = convertToResponsive(b)
+  const rv = convertToResponsive(v)
+  const rh = convertToResponsive(h)
+
+  const top = { xs: tokens.size.x0, ...ra, ...rv, ...rt }
+  const bottom = { xs: tokens.size.x0, ...ra, ...rv, ...rb }
+  const left = { xs: tokens.size.x0, ...ra, ...rh, ...rl }
+  const right = { xs: tokens.size.x0, ...ra, ...rh, ...rr }
+
+  return { top, left, right, bottom }
 }

@@ -45,3 +45,18 @@ export type ColorToken =
   | SuccessColorToken
   | WarningColorToken
   | CriticalColorToken
+
+export type AllTokens =
+  | SizeToken
+  | WidthToken
+  | ShadowToken
+  | FontSizeToken
+  | FontFamilyToken
+  | FontWeightToken
+  | LineHeightToken
+  | BackgroundColorToken
+  | ForegroundColorToken
+  | PrimaryColorToken
+  | SuccessColorToken
+  | WarningColorToken
+  | CriticalColorToken

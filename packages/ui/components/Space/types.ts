@@ -1,3 +1,4 @@
+import { LazyResponsive } from '../../lib/responsive'
 import { SizeToken } from '../../tokens'
 import { CoreComponent } from '../../types/core'
 import { PartialFor } from '../../types/utils'
@@ -5,17 +6,17 @@ import { PartialFor } from '../../types/utils'
 export type Directions = 't' | 'r' | 'b' | 'l' | 'h' | 'v' | 'a'
 
 export type MarginProps = {
-  [MarginProperty in `m${Directions}`]?: SizeToken
+  [MarginProperty in `m${Directions}`]?: LazyResponsive<SizeToken>
 }
 
 export type PaddingProps = {
-  [PaddingProperty in `p${Directions}`]?: SizeToken
+  [PaddingProperty in `p${Directions}`]?: LazyResponsive<SizeToken>
 }
 
 export interface SpaceProps
   extends PartialFor<CoreComponent, 'children'>,
     MarginProps,
     PaddingProps {
-  height?: SizeToken
-  width?: SizeToken
+  height?: LazyResponsive<SizeToken>
+  width?: LazyResponsive<SizeToken>
 }

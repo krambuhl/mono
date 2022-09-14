@@ -1,24 +1,19 @@
 import type { ImageLockupProps } from './types'
-import { tokens } from 'ui/tokens'
+import { SizeToken, tokens } from 'ui/tokens'
+import { responsiveToken } from 'ui/lib/responsive'
+import styled from 'styled-components'
 
-export function ImageLockup({ children, ...props }: ImageLockupProps) {
-  return (
-    <div {...props}>
-      {children}
+export const ImageLockup = styled.div<ImageLockupProps>`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  ${responsiveToken<SizeToken>('gap', {
+    xs: tokens.size.x12,
+    sm: tokens.size.x20,
+  })}
 
-      <style jsx>{`
-        div {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: ${tokens.size.x24};
-        }
-
-        div :global(img),
-        div :global(video) {
-          width: 100%;
-          border-radius: ${tokens.size.x8};
-        }
-      `}</style>
-    </div>
-  )
-}
+  :global(img),
+  :global(video) {
+    width: 100%;
+    border-radius: ${tokens.size.x8};
+  }
+`

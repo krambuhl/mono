@@ -1,28 +1,15 @@
 import type { StackProps } from './types'
 import { tokens } from '../../tokens'
-import classNames from 'classnames'
+import styled from 'styled-components'
+import { responsiveToken } from '../../lib/responsive'
+import { SizeToken } from '../../tokens'
 
-export function Stack({
-  as: Tag = 'div',
-  direction = 'vertical',
-  gap = tokens.size.x0,
-  children,
-  className,
-  ...props
-}: StackProps) {
-  return (
-    <Tag className={classNames('stack', className)} {...props}>
-      {children}
+export const Stack = styled.div<StackProps>`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: ${({ direction = 'vertical' }) =>
+    direction === 'horizontal' ? 'row' : 'column'};
 
-      <style jsx>{`
-        .stack {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          flex-direction: ${direction === 'horizontal' ? 'row' : 'column'};
-          gap: ${gap};
-        }
-      `}</style>
-    </Tag>
-  )
-}
+  ${({ gap = tokens.size.x0 }) => responsiveToken<SizeToken>('gap', gap)};
+`
