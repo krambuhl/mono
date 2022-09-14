@@ -16,6 +16,8 @@ const imageProps = {
     height: 'auto',
     aspectRatio: '1',
   },
+  sizes: '(max-width: 448px) 33vw, 182px',
+  priority: true,
 }
 
 export default function Index() {
