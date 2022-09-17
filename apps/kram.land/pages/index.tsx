@@ -1,38 +1,29 @@
-import Image from 'next/future/image'
-import { ImageLockup } from 'components/ImageLockup'
+import { Image, ImageLockup } from 'components/ImageLockup'
 
 import { Area } from 'ui/components/Area'
 import { HeadingText, BodyText } from 'ui/components/Text'
 import { Stack } from 'ui/components/Stack'
 import { Space } from 'ui/components/Space'
-import { Button } from 'ui/components/Button'
+import { ButtonLink } from 'ui/components/Button'
 import { tokens } from 'ui/tokens'
+import styled from 'styled-components'
 
-const imageProps = {
-  width: 240,
-  height: 240,
-  style: {
-    width: '100%',
-    height: 'auto',
-    aspectRatio: '1',
-  },
-  sizes: '(max-width: 448px) 33vw, 182px',
-  priority: true,
-}
+const Root = styled.div`
+  text-align: center;
+`
 
 export default function Index() {
   return (
-    <div>
+    <Root>
       <Space
         pv={{
-          xs: tokens.size.x24,
+          xs: tokens.size.x32,
           sm: tokens.size.x56,
           md: tokens.size.x72,
-          lg: tokens.size.x96,
         }}
         ph={tokens.size.x24}
       >
-        <Area width={tokens.width.x384} className="page-area">
+        <Area width={tokens.width.x384}>
           <Stack
             gap={{
               xs: tokens.size.x32,
@@ -41,10 +32,10 @@ export default function Index() {
             }}
           >
             <ImageLockup>
-              <Image src="/sequence-1a.png" alt="" {...imageProps} />
-              <Image src="/sequence-2a.png" alt="" {...imageProps} />
-              <Image src="/sequence-3a.png" alt="" {...imageProps} />
-              <Image src="/sequence-4a.png" alt="" {...imageProps} />
+              <Image src="/sequence-1a.png" alt="" />
+              <Image src="/sequence-2a.png" alt="" />
+              <Image src="/sequence-3a.png" alt="" />
+              <Image src="/sequence-4a.png" alt="" />
             </ImageLockup>
 
             <Stack gap={{ xs: tokens.size.x24, sm: tokens.size.x32 }}>
@@ -73,7 +64,7 @@ export default function Index() {
 
               <div>
                 <Space height={tokens.size.x4} data-hello="Weod" />
-                <Button href="mailto:hello@kram.land">say hello</Button>
+                <ButtonLink href="mailto:hello@kram.land">say hello</ButtonLink>
               </div>
 
               <BodyText as="p" size="xs">
@@ -84,12 +75,6 @@ export default function Index() {
           </Stack>
         </Area>
       </Space>
-
-      <style jsx>{`
-        div :global(.page-area) {
-          text-align: center;
-        }
-      `}</style>
-    </div>
+    </Root>
   )
 }

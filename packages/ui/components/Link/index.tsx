@@ -1,25 +1,29 @@
 import NextLink from 'next/link'
+import styled from 'styled-components'
+import { tokens } from '../../tokens'
 import type { LinkProps } from './types'
+
+const Root = styled.a`
+  text-decoration: underline;
+  color: ${tokens.primary.action.default};
+
+  &:hover {
+    text-decoration-thickness: 0.2em;
+    color: ${tokens.primary.action.hover};
+  }
+
+  &:active {
+    color: ${tokens.primary.action.pressed};
+    text-decoration-color: var(--primary-action-default);
+  }
+`
 
 export function Link({ href, children, ...props }: LinkProps) {
   return (
     <NextLink href={href} passHref>
-      <a {...props}>{children}</a>
-
-      <style jsx>{`
-        a {
-          text-decoration: underline;
-
-          &:hover {
-            text-decoration-thickness: 0.2em;
-          }
-
-          &:active {
-            color: var(--primary-action-default);
-            text-decoration-color: var(--primary-action-default);
-          }
-        }
-      `}</style>
+      <Link.StyledRoot {...props}>{children}</Link.StyledRoot>
     </NextLink>
   )
 }
+
+Link.StyledRoot = Root

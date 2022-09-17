@@ -1,22 +1,9 @@
+import styled from 'styled-components'
 import { tokens } from '../../tokens'
 import type { AreaProps } from './types'
 
-export function Area({
-  width = tokens.width.x768,
-  children,
-  ...props
-}: AreaProps) {
-  return (
-    <div {...props}>
-      {children}
-
-      <style jsx>{`
-        div {
-          margin: auto;
-          max-width: ${width};
-          width: 100%;
-        }
-      `}</style>
-    </div>
-  )
-}
+export const Area = styled.div<AreaProps>`
+  margin: auto;
+  max-width: ${({ width = tokens.width.x768 }) => width};
+  width: 100%;
+`

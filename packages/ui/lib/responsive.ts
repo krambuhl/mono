@@ -1,4 +1,5 @@
-import { CSSProperties } from 'react'
+import { PropertiesHyphen } from 'csstype'
+
 import { css } from 'styled-components'
 
 export const breakpoints = {
@@ -54,8 +55,8 @@ function createPropertyQuery({
 }
 
 export function responsiveProp(
-  rawName: keyof CSSProperties,
-  rawValues: string | Responsive<string>
+  rawName: keyof PropertiesHyphen,
+  rawValues: LazyResponsive<string>
 ) {
   const name = rawName.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())
   const values = convertToResponsive<string>(rawValues)
@@ -73,7 +74,7 @@ function createTokenQuery<T>({
   token,
   breakpoint,
 }: {
-  name: keyof CSSProperties
+  name: keyof PropertiesHyphen
   token?: T
   breakpoint: Breakpoint
 }) {
@@ -81,7 +82,7 @@ function createTokenQuery<T>({
 }
 
 export function responsiveToken<T>(
-  name: keyof CSSProperties,
+  name: keyof PropertiesHyphen,
   rawValues: LazyResponsive<T>
 ) {
   const values = convertToResponsive<T>(rawValues)

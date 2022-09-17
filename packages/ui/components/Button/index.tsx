@@ -1,38 +1,47 @@
-import classNames from 'classnames'
+import styled, { css } from 'styled-components'
 import { tokens } from '../../tokens'
-import type { ButtonProps } from './types'
+import { ButtonLinkProps, ButtonProps } from './types'
 
-export function Button({ href, children, className, ...props }: ButtonProps) {
-  const Tag = href ? 'a' : 'button'
-  const addlProps = href ? { href } : {}
+const sharedButtonStyles = css`
+  display: inline-block;
+  cursor: pointer;
+  padding: ${tokens.size.x12} ${tokens.size.x24};
+  background-color: ${tokens.bg.base.default};
+  border: 2px solid ${tokens.fg.muted.default};
+  color: ${tokens.fg.muted.default};
+  border-radius: ${tokens.size.x8};
+`
 
-  return (
-    <Tag className={classNames('button', className)} {...addlProps} {...props}>
-      {children}
+const interactiveButtonStyles = css`
+  &:hover {
+    background-color: ${tokens.bg.base.hover};
+    border-color: ${tokens.fg.muted.hover};
+    color: ${tokens.fg.muted.hover};
+  }
 
-      <style jsx>{`
-        .button {
-          display: inline-block;
-          cursor: pointer;
-          padding: ${tokens.size.x12} ${tokens.size.x24};
-          background-color: ${tokens.bg.base.default};
-          border: 2px solid ${tokens.fg.muted.default};
-          color: ${tokens.fg.muted.default};
-          border-radius: ${tokens.size.x8};
-        }
+  &:active {
+    background-color: ${tokens.bg.base.pressed};
+    border-color: ${tokens.fg.muted.pressed};
+    color: ${tokens.fg.muted.pressed};
+  }
+`
 
-        .button:hover {
-          background-color: ${tokens.bg.base.hover};
-          border-color: ${tokens.fg.muted.hover};
-          color: ${tokens.fg.muted.hover};
-        }
+const disabledButtonStyled = css`
+  background-color: ${tokens.bg.alt.default};
+  border-color: ${tokens.bg.alt.pressed};
+  color: ${tokens.fg.muted.default};
+  cursor: not-allowed;
+  opacity: 0.6;
+`
 
-        .button:active {
-          background-color: ${tokens.bg.base.pressed};
-          border-color: ${tokens.fg.muted.pressed};
-          color: ${tokens.fg.muted.pressed};
-        }
-      `}</style>
-    </Tag>
-  )
-}
+export const Button = styled.button<ButtonProps>`
+  ${sharedButtonStyles};
+
+  ${({ disabled }) =>
+    disabled ? disabledButtonStyled : interactiveButtonStyles}
+`
+
+export const ButtonLink = styled.a<ButtonLinkProps>`
+  ${sharedButtonStyles};
+  ${interactiveButtonStyles}
+`
