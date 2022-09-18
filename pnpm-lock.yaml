@@ -100,6 +100,45 @@ importers:
       stylelint-config-custom: link:../../packages/stylelint-config-custom
       tsconfig: link:../../packages/tsconfig
 
+  apps/lab.kram.land:
+    specifiers:
+      '@types/humps': ^2.0.1
+      '@types/node': 17.0.21
+      '@types/react': 17.0.40
+      classnames: ^2.3.1
+      eslint-config-custom: workspace:*
+      humps: ^2.0.1
+      next: ^12.3
+      next-transpile-modules: 9.0.0
+      postcss-config-custom: workspace:*
+      react: ^18.2
+      react-dom: ^18.2
+      react-is: ^18.2
+      styled-components: ^5.3.5
+      stylelint-config-custom: workspace:*
+      the-new-css-reset: ^1.6.0
+      tsconfig: workspace:*
+      ui: workspace:*
+    dependencies:
+      classnames: 2.3.1
+      humps: 2.0.1
+      next: 12.3.0_react-dom@18.2.0+react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-is: 18.2.0
+      styled-components: 5.3.5_fa3acc110621e003f368ed3f60914608
+      the-new-css-reset: 1.7.3
+      ui: link:../../packages/ui
+    devDependencies:
+      '@types/humps': 2.0.2
+      '@types/node': 17.0.21
+      '@types/react': 17.0.40
+      eslint-config-custom: link:../../packages/eslint-config-custom
+      next-transpile-modules: 9.0.0
+      postcss-config-custom: link:../../packages/postcss-config-custom
+      stylelint-config-custom: link:../../packages/stylelint-config-custom
+      tsconfig: link:../../packages/tsconfig
+
   packages/eslint-config-custom:
     specifiers:
       eslint: ^8
@@ -775,7 +814,7 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
-      csstype: 3.1.0
+      csstype: 3.1.1
     dev: true
 
   /@types/react/17.0.45:
@@ -1290,10 +1329,6 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: false
-
-  /csstype/3.1.0:
-    resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
-    dev: true
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
