@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 
 import { BodyText, HeadingText } from '../Text'
-import { Button } from '../Button'
+import { ButtonLink } from '../Button'
 import { Stack } from '../Stack'
 
 import { FileListingProps } from './types'
@@ -21,7 +21,7 @@ export function FileListing({ files, className, ...props }: FileListingProps) {
           .sort((a, b) => (a.date < b.date ? 1 : -1))
           .map(({ title, date, url }) => (
             <NextLink key={title} href={url} passHref>
-              <Button className="file-listing--button">
+              <ButtonLink className="file-listing--button">
                 <Stack
                   gap={tokens.size.x6}
                   direction="vertical"
@@ -39,7 +39,7 @@ export function FileListing({ files, className, ...props }: FileListingProps) {
                     {new Date(date).toLocaleDateString('en-US')}
                   </BodyText>
                 </Stack>
-              </Button>
+              </ButtonLink>
             </NextLink>
           ))
       ) : (
