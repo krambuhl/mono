@@ -22,10 +22,12 @@ export const StyledImageLockup = styled.div<
 >`
   display: grid;
   width: 100%;
+
   ${responsiveToken<SizeToken>('gap', {
     xs: tokens.size.x12,
     sm: tokens.size.x20,
   })};
+
   ${responsiveProp('grid-template-columns', {
     xs: 'repeat(1, 1fr)',
     sm: 'repeat(2, 1fr)',
