@@ -1,11 +1,38 @@
 import { useMemo } from 'react'
-import type { FormulaSketchProps } from './types'
-import { Sketch } from 'components/Sketch'
+import styled from 'styled-components'
 
+import { BodyText, HeadingText } from 'ui/components/Text'
+import { tokens } from 'ui/tokens'
+import { Card, CardPadding } from 'ui/components/Card'
+
+import { Sketch } from 'components/Sketch'
+import type { FormulaSketchProps } from './types'
 import { useLimits } from './useLimits'
 
 const round = (x: number) => Math.ceil(x * 1000) / 1000
 const interpolate = (a: number, b: number, t: number) => t / (b - a)
+
+// @ts-expect-error produces complex types
+const throwaway = styled(styled.div)``
+
+const Root = styled(Card)`
+  display: grid;
+  grid-template-rows: auto min-content;
+  text-align: center;
+`
+
+const Graph = styled.div`
+  aspect-ratio: 1;
+  margin: 1em 0;
+  overflow: hidden;
+  width: 100%;
+`
+
+const Range = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
 
 export function FormulaSketch({
   formulaName,
@@ -19,11 +46,13 @@ export function FormulaSketch({
   const size = 512
 
   return (
-    <div className="page">
-      <div className="formula">
-        <code>{formulaName}</code>
-      </div>
-      <div className="graph">
+    <Root padding="none">
+      <CardPadding>
+        <HeadingText as="h2" size="xs">
+          {formulaName}
+        </HeadingText>
+      </CardPadding>
+      <Graph>
         <Sketch
           setup={(p, store) => {
             p.createCanvas(size, size, p.WEBGL)
@@ -44,7 +73,7 @@ export function FormulaSketch({
             const y = pos * (size / 2)
 
             store.history.push([x, y])
-            if (store.history.length > 340) {
+            if (store.history.length > 500) {
               store.history.splice(0, 1)
             }
 
@@ -80,53 +109,27 @@ export function FormulaSketch({
             p.ellipse(x, -y, 16)
           }}
         />
-      </div>
-      <div className="range">
-        <span>
-          min:{' '}
-          <strong>
-            {Math.abs(limitMin) > 100000 ? limitMin.toExponential(2) : limitMin}
-          </strong>
-        </span>
-        <span>
-          max:{' '}
-          <strong>
-            {Math.abs(limitMax) > 100000 ? limitMax.toExponential(2) : limitMax}
-          </strong>
-        </span>
-      </div>
-
-      <style jsx>{`
-        .page {
-          border: 2px solid var(--bg-inverted-default);
-          border-radius: var(--size-12);
-          box-shadow: var(--shadow-mid);
-          color: var(--fg-inverted-default);
-          display: grid;
-          grid-template-rows: auto min-content;
-          padding: var(--size-8);
-          text-align: center;
-        }
-
-        .formula {
-          font-weight: bold;
-        }
-
-        .graph {
-          aspect-ratio: 1;
-          margin: 1em 0;
-          margin-left: calc(-1 * var(--size-sm));
-          overflow: hidden;
-          width: calc(100% + var(--size-sm) * 2);
-        }
-
-        .range {
-          display: flex;
-          font-size: 0.875em;
-          justify-content: space-between;
-          width: 100%;
-        }
-      `}</style>
-    </div>
+      </Graph>
+      <CardPadding>
+        <Range>
+          <BodyText size="xs">
+            min:{' '}
+            <strong>
+              {Math.abs(limitMin) > 100000
+                ? limitMin.toExponential(2)
+                : limitMin}
+            </strong>
+          </BodyText>
+          <BodyText size="xs">
+            max:{' '}
+            <strong>
+              {Math.abs(limitMax) > 100000
+                ? limitMax.toExponential(2)
+                : limitMax}
+            </strong>
+          </BodyText>
+        </Range>
+      </CardPadding>
+    </Root>
   )
 }

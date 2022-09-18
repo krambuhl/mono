@@ -2,6 +2,24 @@ import { useCallback } from 'react'
 import dynamic from 'next/dynamic'
 import type { SketchProps } from './types'
 import type { P5Instance, Sketch as SketchType } from 'react-p5-wrapper'
+import styled from 'styled-components'
+import { BodyText } from 'ui/components/Text'
+
+const Loading = styled(BodyText)`
+  align-self: center;
+`
+
+const StyledSketch = styled.div`
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 1;
+
+  canvas {
+    display: block;
+    height: auto !important;
+    width: 100% !important;
+  }
+`
 
 const SketchWrapper = dynamic(
   async () => {
@@ -10,19 +28,7 @@ const SketchWrapper = dynamic(
   },
   {
     ssr: false,
-    loading: () => (
-      <>
-        <div>Loading</div>
-        <style jsx>{`
-          div {
-            align-self: center;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-transform: uppercase;
-          }
-        `}</style>
-      </>
-    ),
+    loading: () => <Loading size="sm">loading...</Loading>,
   }
 )
 
@@ -44,20 +50,8 @@ export function Sketch({ setup, draw, ...props }: SketchProps) {
   )
 
   return (
-    <div {...props}>
+    <StyledSketch {...props}>
       <SketchWrapper sketch={sketch} />
-
-      <style jsx>{`
-        div {
-          aspect-ratio: 1;
-        }
-
-        div :global(canvas) {
-          display: block;
-          height: auto !important;
-          width: 100% !important;
-        }
-      `}</style>
-    </div>
+    </StyledSketch>
   )
 }

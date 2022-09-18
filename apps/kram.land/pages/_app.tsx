@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 
 import { DataContext } from 'ui/components/DataContext'
 import { HtmlTitle } from 'ui/components/HtmlTitle'
-import { AppLayout } from 'components/AppLayout'
+import { AppLayout } from 'ui/components/AppLayout'
 
 import { constants } from '../constants'
 

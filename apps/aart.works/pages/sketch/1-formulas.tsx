@@ -20,7 +20,7 @@ export default function FormulaList() {
     <>
       <HtmlTitle title={meta.title} />
 
-      <Stack>
+      <Stack gap={{ xs: tokens.size.x32, sm: tokens.size.x48 }}>
         <PageHeader title={meta.title} date={meta.date} />
         <Area width={tokens.width.x768}>
           <AutoGrid gap={tokens.size.x16} width={tokens.width.x256}>

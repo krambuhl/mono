@@ -49,10 +49,14 @@ export default function Output() {
 
                 const x =
                   Math.sin(input) * (Math.cos(time) * (size / 4)) +
-                  Math.sin(i) * (size / 6)
+                  Math.sin(i) * (size / 6) +
+                  0
+                // Math.random() * (size / 32)
                 const y =
                   Math.cos(input) * (Math.sin(time) * (size / 4)) +
-                  Math.cos(i) * (size / 6)
+                  Math.cos(i) * (size / 6) +
+                  0
+                // Math.random() * (size / 32)
 
                 p.fill(
                   p.color(
