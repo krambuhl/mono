@@ -21,15 +21,15 @@ importers:
       classnames: ^2.3.1
       eslint: 8.11.0
       eslint-config-custom: workspace:*
-      humps: ^2.0.1
-      next: 12.3.0
+      humps: ^2.0
+      next: ^12.3
       next-transpile-modules: 9.0.0
       p5: ^1.4.2
       postcss: '>=8.4.6 <9.0.0'
       postcss-config-custom: workspace:*
-      react: 18.2.0
-      react-dom: 18.2.0
-      react-is: ^18.2.0
+      react: ^18.2
+      react-dom: ^18.2
+      react-is: ^18.2
       react-p5-wrapper: ^3.3.0
       styled-components: ^5.3.5
       stylelint-config-custom: workspace:*
@@ -69,12 +69,12 @@ importers:
       classnames: ^2.3.1
       eslint-config-custom: workspace:*
       humps: ^2.0.1
-      next: ^12.3.0
+      next: ^12.3
       next-transpile-modules: 9.0.0
       postcss-config-custom: workspace:*
-      react: 18.2.0
-      react-dom: 18.2.0
-      react-is: ^18.2.0
+      react: ^18.2
+      react-dom: ^18.2
+      react-is: ^18.2
       styled-components: ^5.3.5
       stylelint-config-custom: workspace:*
       the-new-css-reset: ^1.6.0
@@ -155,10 +155,10 @@ importers:
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       fast-glob: ^3.2.11
-      next: ^12.3.0
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      react-is: ^18.2.0
+      next: ^12.3
+      react: ^18.2
+      react-dom: ^18.2
+      react-is: ^18.2
       styled-components: ^5.3.5
       tsconfig: workspace:*
     dependencies:
@@ -167,6 +167,7 @@ importers:
       dirty-json: 0.9.2
       fast-glob: 3.2.11
       next: 12.3.0_react-dom@18.2.0+react@18.2.0
+      react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-is: 18.2.0
       styled-components: 5.3.5_fa3acc110621e003f368ed3f60914608
@@ -176,7 +177,6 @@ importers:
       '@types/styled-components': 5.1.26
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
-      react: 18.2.0
       tsconfig: link:../tsconfig
 
 packages:
@@ -2520,6 +2520,7 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
@@ -3449,6 +3450,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
 
   /read-pkg-up/7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
