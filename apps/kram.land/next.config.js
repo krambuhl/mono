@@ -6,6 +6,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  experimental: {
+    styledComponent: true,
+  },
   eslint: {
     dirs: ['components', 'contexts', 'lib', 'pages', 'styles'],
   },
