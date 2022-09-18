@@ -2,8 +2,10 @@ const withTM = require('next-transpile-modules')(['ui'])
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  styledComponents: true,
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   eslint: {
     dirs: ['components', 'contexts', 'lib', 'pages', 'styles'],
   },
