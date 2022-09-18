@@ -53,7 +53,7 @@ export const StyledImageLockup = styled.div<
   }
 `
 
-export function ImageLockup(props: StyledImageLockup) {
+export function ImageLockup(props: ImageLockupProps) {
   const [activeIndex, setActiveIndex] = useState<number>(1)
   useInterval(() => {
     setActiveIndex(activeIndex >= 4 ? 1 : activeIndex + 1)
