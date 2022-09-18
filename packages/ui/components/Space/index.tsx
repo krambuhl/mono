@@ -19,10 +19,10 @@ export const Space = styled.div.withConfig({
       })
 
       return css`
-        ${responsiveProp('marginTop', space.top)}
-        ${responsiveProp('marginBottom', space.bottom)}
-        ${responsiveProp('marginLeft', space.left)}
-        ${responsiveProp('marginRight', space.right)}
+        ${responsiveProp('margin-top', space.top)}
+        ${responsiveProp('margin-bottom', space.bottom)}
+        ${responsiveProp('margin-left', space.left)}
+        ${responsiveProp('margin-right', space.right)}
       `
     }
   }}
@@ -40,10 +40,10 @@ export const Space = styled.div.withConfig({
       })
 
       return css`
-        ${responsiveProp('paddingTop', space.top)}
-        ${responsiveProp('paddingBottom', space.bottom)}
-        ${responsiveProp('paddingLeft', space.left)}
-        ${responsiveProp('paddingRight', space.right)}
+        ${responsiveProp('padding-top', space.top)}
+        ${responsiveProp('padding-bottom', space.bottom)}
+        ${responsiveProp('padding-left', space.left)}
+        ${responsiveProp('padding-right', space.right)}
       `
     }
   }}
