@@ -1,11 +1,11 @@
-import { CSSProperties } from 'react'
+import { PropertiesHyphen } from 'csstype'
 import { SizeToken, WidthToken } from '../../tokens'
 import { CoreComponent } from '../../types/core'
 
 export interface GridProps extends CoreComponent {
   gap?: SizeToken
-  columns?: CSSProperties['gridTemplateColumns']
-  rows?: CSSProperties['gridTemplateRows']
+  columns?: PropertiesHyphen['grid-template-columns']
+  rows?: PropertiesHyphen['grid-template-rows']
 }
 
 export interface AutoGridProps extends CoreComponent {

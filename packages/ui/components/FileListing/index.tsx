@@ -22,11 +22,7 @@ export function FileListing({ files, className, ...props }: FileListingProps) {
           .map(({ title, date, url }) => (
             <NextLink key={title} href={url} passHref>
               <ButtonLink className="file-listing--button">
-                <Stack
-                  gap={tokens.size.x6}
-                  direction="vertical"
-                  className="file-listing--stack"
-                >
+                <Stack gap={tokens.size.x6} className="file-listing--stack">
                   <HeadingText
                     as="h3"
                     size="sm"

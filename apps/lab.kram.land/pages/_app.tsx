@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
+import { RecoilRoot } from 'recoil'
 
 import { DataContext } from 'ui/components/DataContext'
 import { HtmlTitle } from 'ui/components/HtmlTitle'

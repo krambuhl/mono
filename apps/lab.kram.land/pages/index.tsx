@@ -1,31 +1,34 @@
-import { Area } from 'ui/components/Area'
-import { HeadingText } from 'ui/components/Text'
+import type { GetStaticProps } from 'next'
+
+import { listDirectory } from 'ui/lib/directory'
+import type { File } from 'ui/types/files'
+import { FileListing } from 'ui/components/FileListing'
+import { PageHeader } from 'ui/components/PageHeader'
 import { Stack } from 'ui/components/Stack'
 import { tokens } from 'ui/tokens'
-import styled from 'styled-components'
+import { Space } from 'ui/components/Space'
 
-const Root = styled.div`
-  text-align: center;
-`
+interface Props {
+  entryList: File[]
+}
 
-export default function Index() {
+export default function SketchIndex({ entryList }: Props) {
   return (
-    <Root>
-      <Area width={tokens.width.x384}>
-        <Stack
-          gap={{
-            xs: tokens.size.x32,
-            sm: tokens.size.x48,
-            md: tokens.size.x56,
-          }}
-        >
-          <Stack gap={{ xs: tokens.size.x24, sm: tokens.size.x32 }}>
-            <HeadingText as="h1" size="sm">
-              This is the lab!
-            </HeadingText>
-          </Stack>
-        </Stack>
-      </Area>
-    </Root>
+    <Stack>
+      <PageHeader title="adventures" />
+      <Space pv={tokens.size.x24}>
+        <FileListing files={entryList} />
+      </Space>
+    </Stack>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const entryList = await listDirectory('pages/lab/**/*.tsx')
+
+  return {
+    props: {
+      entryList,
+    },
+  }
 }

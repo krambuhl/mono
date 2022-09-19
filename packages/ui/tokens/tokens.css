@@ -36,7 +36,10 @@
   --shadow-mid: 0 var(--size-4) var(--size-8) hsl(0deg 0 0 / 15%);
   --shadow-high: 0 var(--size-8) var(--size-12) hsl(0deg 0 0 / 20%);
 
-  /* --font-family-body: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+  /* --font-family-heading: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+    helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --font-family-body: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
     helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol'; */
   --font-family-heading: menlo, consolas, monaco, liberation mono,

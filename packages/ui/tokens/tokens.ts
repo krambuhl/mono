@@ -60,15 +60,15 @@ export const tokens = {
       xl: 'var(--font-size-data-xl)',
     },
   },
-  fontFamily: {
-    heading: 'var(--font-family-heading)',
-    body: 'var(--font-family-body)',
-    data: 'var(--font-family-data)',
-  },
   fontWeight: {
     heading: 'var(--font-weight-heading)',
     body: 'var(--font-weight-body)',
     data: 'var(--font-weight-data)',
+  },
+  fontFamily: {
+    heading: 'var(--font-family-heading)',
+    body: 'var(--font-family-body)',
+    data: 'var(--font-family-data)',
   },
   lineHeight: {
     heading: 'var(--line-height-heading)',

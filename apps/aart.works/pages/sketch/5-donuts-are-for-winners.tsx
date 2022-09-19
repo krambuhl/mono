@@ -42,21 +42,17 @@ export default function Output() {
               for (let i = 0; i < length; i++) {
                 const pos = i / length
                 const offset = store.history[i]
-                const time = start / 500
+                const time = start / 5000
                 const input =
                   (start - offset) /
                   p.lerp(30, 45, p.norm(Math.sin(time), -1, 1))
 
-                const x =
+                let x =
                   Math.sin(input) * (Math.cos(time) * (size / 4)) +
-                  Math.sin(i) * (size / 6) +
-                  0
-                // Math.random() * (size / 32)
+                  Math.sin(i) * (size / 6)
                 const y =
                   Math.cos(input) * (Math.sin(time) * (size / 4)) +
-                  Math.cos(i) * (size / 6) +
-                  0
-                // Math.random() * (size / 32)
+                  Math.cos(i) * (size / 6)
 
                 p.fill(
                   p.color(

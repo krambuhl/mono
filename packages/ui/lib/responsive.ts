@@ -54,18 +54,37 @@ function createPropertyQuery({
     : undefined
 }
 
+const defaultValue = (value?: string) => value
+
 export function responsiveProp(
   rawName: keyof PropertiesHyphen,
-  rawValues: LazyResponsive<string>
+  rawValues: LazyResponsive<string>,
+  transform = defaultValue
 ) {
   const name = rawName.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())
   const values = convertToResponsive<string>(rawValues)
   return css`
-    ${values.xs ? `${name}: ${values.xs};` : ''}
-    ${createPropertyQuery({ name, value: values.sm, breakpoint: 'sm' })}
-    ${createPropertyQuery({ name, value: values.md, breakpoint: 'md' })}
-    ${createPropertyQuery({ name, value: values.lg, breakpoint: 'lg' })}
-    ${createPropertyQuery({ name, value: values.xl, breakpoint: 'xl' })}
+    ${values.xs ? `${name}: ${transform(values.xs)};` : ''}
+    ${createPropertyQuery({
+      name,
+      value: transform(values.sm),
+      breakpoint: 'sm',
+    })}
+    ${createPropertyQuery({
+      name,
+      value: transform(values.md),
+      breakpoint: 'md',
+    })}
+    ${createPropertyQuery({
+      name,
+      value: transform(values.lg),
+      breakpoint: 'lg',
+    })}
+    ${createPropertyQuery({
+      name,
+      value: transform(values.xl),
+      breakpoint: 'xl',
+    })}
   `
 }
 
