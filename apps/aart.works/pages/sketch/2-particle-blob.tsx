@@ -19,7 +19,7 @@ export default function ALittleSomething() {
     <>
       <HtmlTitle title={meta.title} />
 
-      <Stack>
+      <Stack gap={tokens.size.x24}>
         <PageHeader title={meta.title} date={meta.date} />
         <Area width={tokens.width.x768}>
           <Sketch

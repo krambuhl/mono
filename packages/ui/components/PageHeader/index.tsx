@@ -12,7 +12,7 @@ export function PageHeader({
   ...props
 }: PageHeaderProps) {
   return (
-    <Stack as="header" gap={tokens.size.x20} {...props}>
+    <Stack as="header" gap={tokens.size.x12} {...props}>
       <HeadingText as="h1" size="lg">
         {title}
       </HeadingText>

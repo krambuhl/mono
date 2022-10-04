@@ -15,7 +15,7 @@ export default function SketchIndex({ entryList }: Props) {
   return (
     <>
       <HtmlTitle title="Sketches" />
-      <Stack>
+      <Stack gap={tokens.size.x24}>
         <PageHeader title="Sketches" />
         <FileListing files={entryList} />
       </Stack>

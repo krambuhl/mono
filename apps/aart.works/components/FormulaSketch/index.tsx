@@ -19,6 +19,7 @@ const Root = styled(Card)`
   display: grid;
   grid-template-rows: auto min-content;
   text-align: center;
+  background-color: black;
 `
 
 const Graph = styled.div`
@@ -73,7 +74,7 @@ export function FormulaSketch({
             const y = pos * (size / 2)
 
             store.history.push([x, y])
-            if (store.history.length > 500) {
+            if (store.history.length > 420) {
               store.history.splice(0, 1)
             }
 
