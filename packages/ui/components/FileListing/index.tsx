@@ -1,72 +1,79 @@
 import NextLink from 'next/link'
 
 import { BodyText, HeadingText } from '../Text'
-import { ButtonLink } from '../Button'
+import { Area } from '../Area'
 import { Stack } from '../Stack'
 
-import { FileListingProps } from './types'
+import type { FileListingProps, MetaFile } from './types'
 import { tokens } from '../../tokens'
 import classNames from 'classnames'
+import { useMemo } from 'react'
+import styled from 'styled-components'
 
 export function FileListing({ files, className, ...props }: FileListingProps) {
+  const fileList = useMemo(() => {
+    return files
+      .filter(({ name }) => name !== 'index')
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .map((file) => {
+        const date = new Date(file.date)
+        return {
+          ...file,
+          year: date.getFullYear(),
+          month: date.getMonth(),
+        }
+      })
+  }, [files])
+
   return (
-    <Stack
-      gap={tokens.size.x12}
-      className={classNames('file-listing', className)}
-      {...props}
-    >
-      {files ? (
-        files
-          .filter(({ name }) => name !== 'index')
-          .sort((a, b) => (a.date < b.date ? 1 : -1))
-          .map(({ title, date, url }) => (
-            <NextLink key={title} href={url} passHref>
-              <ButtonLink className="file-listing--button">
-                <Stack gap={tokens.size.x6} className="file-listing--stack">
-                  <HeadingText
-                    as="h3"
-                    size="sm"
-                    className="file-listing--title"
+    <Area width={tokens.width.x384}>
+      <Stack
+        gap={{ xs: tokens.size.x6, sm: tokens.size.x12 }}
+        className={classNames('file-listing', className)}
+        {...props}
+      >
+        {fileList ? (
+          fileList
+            .filter(({ name }) => name !== 'index')
+            .sort((a, b) => (a.date < b.date ? 1 : -1))
+            .map(({ title, date, url }) => (
+              <NextLink key={title} href={url} passHref>
+                <FileAnchor>
+                  <FileStack
+                    gap={tokens.size.x16}
+                    direction={{ xs: 'vertical', sm: 'horizontal' }}
+                    className="file-listing--stack"
                   >
-                    {title}
-                  </HeadingText>
+                    <HeadingText
+                      as="h3"
+                      size="xs"
+                      className="file-listing--title"
+                    >
+                      {title}
+                    </HeadingText>
 
-                  <BodyText as="div" size="xs">
-                    {new Date(date).toLocaleDateString('en-US')}
-                  </BodyText>
-                </Stack>
-              </ButtonLink>
-            </NextLink>
-          ))
-      ) : (
-        <div>No Files</div>
-      )}
-
-      <style jsx>{`
-        :global(.file-listing) {
-          text-align: center;
-        }
-
-        :global(.file-listing--button) {
-          width: 100%;
-        }
-
-        :global(.file-listing--stack) {
-          width: 100%;
-          justify-content: space-between;
-        }
-
-        :global(.file-listing--file) {
-          display: flex;
-          align-items: baseline;
-          justify-items: center;
-        }
-
-        :global(.file-listing--title) {
-          flex-grow: 1;
-          text-align: left;
-        }
-      `}</style>
-    </Stack>
+                    <BodyText as="div" size="xs">
+                      {new Date(date).toLocaleDateString('en-US')}
+                    </BodyText>
+                  </FileStack>
+                </FileAnchor>
+              </NextLink>
+            ))
+        ) : (
+          <div>No Files</div>
+        )}
+      </Stack>
+    </Area>
   )
 }
+
+const FileAnchor = styled.a`
+  width: 100%;
+`
+
+// @ts-expect-error produces complex types
+const throwaway = styled(styled.div)``
+
+const FileStack = styled(Stack)`
+  justify-content: space-between;
+`

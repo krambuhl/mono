@@ -6,6 +6,8 @@ import { responsiveProp } from '../../lib/responsive'
 export const Space = styled.div.withConfig({
   shouldForwardProp: (prop) => !['height', 'width'].includes(prop),
 })<SpaceProps>`
+  width: 100%;
+
   ${({ ma, mh, mv, mt, mr, mb, ml }) => {
     if (ma || mh || mv || mt || mr || mb || ml) {
       const space = generateSpace({

@@ -25,12 +25,6 @@ const StyledSketch = styled.div`
   }
 `
 
-const StyledFrame = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: ${tokens.size.x4};
-`
-
 const SketchWrapper = dynamic(
   async () => {
     const mod = await import('react-p5-wrapper')
@@ -45,14 +39,6 @@ const SketchWrapper = dynamic(
 type PlayState = 'play' | 'pause'
 
 export function Sketch({ setup, draw, ...props }: SketchProps) {
-  const [frame, setFrame] = useState(0)
-  const [state, setState] = useState<PlayState>('play')
-
-  const toggleState = useCallback(
-    () => setState(state === 'play' ? 'pause' : 'play'),
-    [state]
-  )
-
   const sketch: SketchType = useCallback(
     (p) => {
       let store = new Map()
@@ -63,21 +49,15 @@ export function Sketch({ setup, draw, ...props }: SketchProps) {
       }
 
       p.draw = () => {
-        if (p.isLooping()) {
-          setFrame(p.frameCount)
-          draw && draw(p as P5Instance, store)
-        }
+        draw && draw(p as P5Instance, store)
       }
     },
-    [setup, draw, state]
+    [setup, draw]
   )
 
   return (
     <StyledSketch {...props}>
       <SketchWrapper sketch={sketch} />
-      {/* <StyledFrame>
-        <BodyText size="xs">frame: {frame}</BodyText>
-      </StyledFrame> */}
     </StyledSketch>
   )
 }

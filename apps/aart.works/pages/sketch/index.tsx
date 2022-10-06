@@ -4,6 +4,7 @@ import type { File } from 'ui/types/files'
 import { FileListing } from 'ui/components/FileListing'
 import { PageHeader } from 'ui/components/PageHeader'
 import { Stack } from 'ui/components/Stack'
+import { Space } from 'ui/components/Space'
 import { HtmlTitle } from 'ui/components/HtmlTitle'
 import { tokens } from 'ui/tokens'
 
@@ -15,9 +16,14 @@ export default function SketchIndex({ entryList }: Props) {
   return (
     <>
       <HtmlTitle title="Sketches" />
-      <Stack gap={tokens.size.x24}>
+      <Stack>
         <PageHeader title="Sketches" />
-        <FileListing files={entryList} />
+        <Space
+          pt={{ xs: tokens.size.x24, sm: tokens.size.x48 }}
+          pb={tokens.size.x24}
+        >
+          <FileListing files={entryList} />
+        </Space>
       </Stack>
     </>
   )

@@ -16,7 +16,10 @@ export default function SketchIndex({ entryList }: Props) {
   return (
     <Stack>
       <PageHeader title="Sketches" />
-      <Space pv={tokens.size.x24}>
+      <Space
+        pt={{ xs: tokens.size.x24, sm: tokens.size.x48 }}
+        pb={tokens.size.x24}
+      >
         <FileListing files={entryList} />
       </Space>
     </Stack>

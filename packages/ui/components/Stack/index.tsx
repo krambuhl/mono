@@ -12,6 +12,7 @@ export const Stack = styled.div<StackProps>`
     responsiveProp('flex-direction', direction, (value) =>
       direction === 'vertical' ? 'column' : 'row'
     )};
+
   ${({ alignment = 'center' }) => responsiveProp('align-items', alignment)};
   ${({ gap = tokens.size.x0 }) => responsiveToken<SizeToken>('gap', gap)};
 `
