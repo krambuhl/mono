@@ -1,4 +1,4 @@
-import {
+import type {
   MeshProps,
   Euler,
   Vector3,
