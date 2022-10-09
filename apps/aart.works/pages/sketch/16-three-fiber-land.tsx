@@ -33,7 +33,7 @@ function Box(props: MeshProps) {
     ref.current!.rotation.x -= (size - props.x) * 0.0005
     ref.current!.rotation.y += (size - props.y) * 0.0005
 
-    const x = ref.current!.rotation.x + delta
+    const x = ref.current!.rotation.x
     const y = ref.current!.rotation.y
     const colorIndex = (Math.sin(x) + Math.cos(y)) * rainbow.length
 
