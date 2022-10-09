@@ -1,6 +1,7 @@
 import type { File } from '../types/files'
 import fs from 'fs/promises'
 import path from 'path'
+// @ts-ignore types be weird
 import json from 'dirty-json'
 import glob from 'fast-glob'
 
