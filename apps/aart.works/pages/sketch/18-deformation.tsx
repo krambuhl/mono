@@ -99,7 +99,7 @@ export default function Output() {
       <Stack gap={tokens.size.x24}>
         <PageHeader title={meta.title} date={meta.date} />
         <Area width={tokens.width.x768}>
-          <div style={{ border: '2px solid white' }}>
+          <div style={{ border: '0px solid white' }}>
             <Scene />
           </div>
         </Area>
