@@ -1,4 +1,4 @@
-import { OrbitControls } from 'three-stdlib'
+import { OrbitControls, RoundedBoxGeometry } from 'three-stdlib'
 
 declare module 'dirty-json'
 
@@ -11,5 +11,6 @@ declare module '*.module.css' {
 declare module '@react-three/fiber' {
   interface ThreeElements {
     orbitControls: Object3DNode<CustomElement, typeof OrbitControls>
+    roundedBoxGeometry: Object3DNode<CustomElement, typeof RoundedBoxGeometry>
   }
 }
