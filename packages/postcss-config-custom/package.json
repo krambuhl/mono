@@ -7,9 +7,6 @@
     "postcss": "^8.4.13"
   },
   "dependencies": {
-    "postcss": ">=8.4.6 <9.0.0",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^7.5.0"
   },
   "publishConfig": {
     "access": "public"

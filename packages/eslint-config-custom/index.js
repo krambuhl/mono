@@ -4,13 +4,13 @@ module.exports = {
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
     'react/jsx-key': 'off',
-    // 'import/order': [
-    //   'error',
-    //   {
-    //     'newlines-between': 'always',
-    //     groups: [['type', 'builtin', 'external'], ['internal']],
-    //   },
-    // ],
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        groups: [['type', 'builtin', 'external'], ['internal']],
+      },
+    ],
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
