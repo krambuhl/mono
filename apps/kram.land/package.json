@@ -15,7 +15,7 @@
     "react": "^18.2",
     "react-dom": "^18.2",
     "react-is": "^18.2",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "the-new-css-reset": "^1.6.0",
     "ui": "workspace:*"
   },
